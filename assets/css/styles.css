@@ -107,7 +107,7 @@ a {
     color: #687690;
     font-size: 1.8rem;
     font-weight: 500;
-    letter-spacing: 0.018rem;
+    letter-spacing: 0.01em;
 }
 
 .hero .title {
@@ -363,6 +363,7 @@ a {
 
 .stats .content {
     width: 1017px;
+    max-width: calc(100% - 203px)
     margin-left: 196px;
 }
 
