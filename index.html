@@ -5,6 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>F8 Project 01</title>
 
+        <!-- AOS animation -->
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
         <!-- Favicon -->
         <link
             rel="apple-touch-icon"
@@ -97,53 +100,103 @@
 
         <!-- style css -->
         <link rel="stylesheet" href="./assets/css/styles.css" />
+        <link rel="stylesheet" href="./assets/css/responsive.css" />
     </head>
     <body>
         <!-- =========== Header ============ -->
+
+        <!-- Pc header -->
         <header class="fix-header">
             <div class="content">
                 <nav class="navbar">
+                    <!-- PC and Tablet -->
+                    <label for="toogle-menu" class="toogle-menu">
+                        <svg
+                            fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 448 512"
+                        >
+                            <path
+                                d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"
+                            />
+                        </svg>
+                    </label>
+
                     <!-- Logo -->
-                    <a href="#"
+                    <a class="logo-header" href="#"
                         ><img src="./assets/img/logo.svg" alt="Bensik"
                     /></a>
 
                     <!-- Navigation -->
-                    <ul>
+                    <ul id="pc-nav">
                         <li><a href="#">Home</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#features">Features</a></li>
                         <li><a href="#resources">Resources</a></li>
                         <li><a href="#contact">Contact</a></li>
+                        <li class="show-on-mobile separate">
+                            <a href="#!">Sign In</a>
+                        </li>
+                        <li class="show-on-mobile"><a href="#!">Sign Up</a></li>
                     </ul>
 
                     <!-- Action -->
-                    <div class="actions">
+                    <div class="actions" data-aos="zoom-in-up">
                         <a href="#!" class="action-link">Sign in</a>
                         <a href="#!" class="btn action-btn">Sign up</a>
                     </div>
                 </nav>
             </div>
         </header>
+
+        <!-- Tablet/ mobile header -->
+        <header class="mobile-header">
+            <input type="checkbox" name="" id="toogle-menu" hidden />
+
+            <!-- Overlay -->
+            <label for="toogle-menu" class="menu-overlay"> </label>
+
+            <!-- Menu content -->
+            <label for="toogle-menu" class="menu-drawer">
+                <!-- Logo -->
+                <a href="#"><img src="./assets/img/logo.svg" alt="Bensik" /></a>
+
+                <!-- Navigation -->
+                <ul id="mobile-nav"></ul>
+            </label>
+        </header>
+
+        <script>
+            const pcNav = document.querySelector("#pc-nav");
+            const mobileNav = document.querySelector("#mobile-nav");
+
+            // coppy from pcnav to mobilenav
+            mobileNav.innerHTML = pcNav.innerHTML;
+        </script>
         <main>
             <!-- ===== Hero information ====== -->
-
             <div class="hero-wrap">
                 <div class="content">
                     <div class="infor">
-                        <p class="sub-title">Welcome to Besnik Agency</p>
-                        <h1 class="title">
+                        <p class="sub-title" data-aos="fade-right">
+                            Welcome to Besnik Agency
+                        </p>
+                        <h1 class="title" data-aos="fade-right">
                             Discover a place you'll love to live.
                         </h1>
-                        <p class="desc">
+                        <p class="desc" data-aos="fade-right">
                             Get the best real estate deals first, before they
                             hit the mass market! Hot foreclosure deals with one
                             simple search
                         </p>
                         <!-- Call to action -->
-                        <a href="#!" class="btn hero-cta">More About Us</a>
+                        <a href="#!" class="btn hero-cta" data-aos="zoom-in-up"
+                            >More About Us</a
+                        >
                     </div>
                     <img
+                        data-aos="fade-down"
+                        lazy="loading"
                         src="./assets/img/hero-image.svg"
                         alt="Discover a place you'll love to live."
                     />
@@ -156,31 +209,61 @@
                 <div class="content">
                     <div class="row row-1">
                         <!-- Logo -->
-                        <img src="./assets/img/logo.svg" alt="Bensik" />
+                        <img
+                            src="./assets/img/logo.svg"
+                            alt="Bensik"
+                            data-aos="fade-up-right"
+                        />
                         <!-- Stars -->
-                        <img src="./assets/img/star.svg" alt="Stars" />
+                        <img
+                            src="./assets/img/star.svg"
+                            alt="Stars"
+                            data-aos="fade-up-left"
+                        />
                     </div>
                     <div class="row row-2">
-                        <p class="desc">
+                        <p class="desc" data-aos="fade-up-right">
                             More than 45,000+ companies trust besnik
                         </p>
-                        <p class="desc">5 Star Ratings (2k+ Review)</p>
+                        <p class="desc" data-aos="fade-up-left">
+                            5 Star Ratings (2k+ Review)
+                        </p>
                     </div>
                     <div class="clients-img">
                         <a href="#!">
-                            <img src="./assets/img/client1.svg" alt="client1" />
+                            <img
+                                src="./assets/img/client1.svg"
+                                alt="client1"
+                                data-aos="flip-left"
+                            />
                         </a>
                         <a href="#!">
-                            <img src="./assets/img/client2.svg" alt="client2" />
+                            <img
+                                src="./assets/img/client2.svg"
+                                alt="client2"
+                                data-aos="flip-left"
+                            />
                         </a>
                         <a href="#!">
-                            <img src="./assets/img/client3.svg" alt="client3" />
+                            <img
+                                src="./assets/img/client3.svg"
+                                alt="client3"
+                                data-aos="flip-down"
+                            />
                         </a>
                         <a href="#!">
-                            <img src="./assets/img/client4.svg" alt="client4" />
+                            <img
+                                src="./assets/img/client4.svg"
+                                alt="client4"
+                                data-aos="flip-right"
+                            />
                         </a>
                         <a href="#!">
-                            <img src="./assets/img/client5.svg" alt="client5" />
+                            <img
+                                src="./assets/img/client5.svg"
+                                alt="client5"
+                                data-aos="flip-down"
+                            />
                         </a>
                     </div>
                 </div>
@@ -190,8 +273,10 @@
 
             <div id="services" class="guides">
                 <div class="content">
-                    <h2 class="sub-title">How its works?</h2>
-                    <p class="desc">
+                    <h2 class="sub-title" data-aos="fade-down">
+                        How its works?
+                    </h2>
+                    <p class="desc" data-aos="fade-down">
                         Everything you need to know when you're looking to buy,
                         rent, or sell - all in one place.
                     </p>
@@ -199,7 +284,7 @@
                     <!-- ============= List guide ============== -->
                     <div class="list-guide">
                         <!-- Item-1 -->
-                        <div class="guide-item">
+                        <div class="guide-item" data-aos="fade-down-right">
                             <img
                                 src="./assets/img/icon1.svg"
                                 alt=""
@@ -217,7 +302,7 @@
                         </div>
 
                         <!-- Item-2 -->
-                        <div class="guide-item">
+                        <div class="guide-item" data-aos="zoom-in">
                             <img
                                 src="./assets/img/icon2.svg"
                                 alt=""
@@ -234,7 +319,7 @@
                             </a>
                         </div>
                         <!-- Item-3 -->
-                        <div class="guide-item">
+                        <div class="guide-item" data-aos="fade-down-left">
                             <img
                                 src="./assets/img/icon3.svg"
                                 alt=""
@@ -262,12 +347,14 @@
             <div id="features" class="featured">
                 <div class="content">
                     <header>
-                        <h2 class="sub-title">Featured Properties</h2>
+                        <h2 class="sub-title" data-aos="fade-right">
+                            Featured Properties
+                        </h2>
                         <div class="row">
-                            <p class="desc">
+                            <p class="desc" data-aos="fade-right">
                                 Everything you need to know when you're looking
                             </p>
-                            <a href="" class="link">
+                            <a href="" class="link" data-aos="fade-down-left">
                                 <span>View All Properties</span>
                                 <img
                                     src="./assets/img/Vector.svg"
@@ -278,7 +365,7 @@
                         </div>
                     </header>
 
-                    <div class="list">
+                    <div class="list" data-aos="zoom-in-up">
                         <!-- Featured item 1 -->
                         <div class="item">
                             <a href="#!">
@@ -402,6 +489,25 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="show-on-mobile link-btn-wrap">
+                        <a href="#!" class="link-btn btn">
+                            <span>View All Properties</span>
+                            <svg
+                                class="arrow"
+                                width="24"
+                                height="8"
+                                viewBox="0 0 24 8"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M21.24 7.68C21.1127 7.84974 20.9232 7.96196 20.7131 7.99196C20.5031 8.02197 20.2897 7.96731 20.12 7.84C19.9503 7.7127 19.838 7.52318 19.808 7.31314C19.778 7.1031 19.8327 6.88974 19.96 6.72L21.4 4.8L0.800001 4.8C0.587827 4.8 0.384344 4.71571 0.234316 4.56569C0.0842855 4.41566 1.72323e-06 4.21217 1.7325e-06 4C1.74178e-06 3.78783 0.0842856 3.58434 0.234316 3.43431C0.384344 3.28429 0.587828 3.2 0.800001 3.2L21.4 3.2L19.96 1.28C19.897 1.19595 19.8511 1.10032 19.825 0.998545C19.799 0.896774 19.7932 0.790864 19.808 0.686863C19.8229 0.582861 19.8581 0.482804 19.9116 0.392405C19.9651 0.302005 20.036 0.223034 20.12 0.16C20.204 0.0969651 20.2997 0.051102 20.4015 0.0250287C20.5032 -0.00104454 20.6091 -0.00681701 20.7131 0.00804037C20.8171 0.0228978 20.9172 0.058094 21.0076 0.11162C21.098 0.165146 21.177 0.235954 21.24 0.32L23.6352 3.5136L23.6456 3.5272L24 4L23.6456 4.472L23.6352 4.4864L21.24 7.68Z"
+                                    fill="currentColor"
+                                />
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -409,8 +515,8 @@
 
             <div id="resources" class="stats">
                 <div class="content">
-                    <div class="row">
-                        <div class="img-block">
+                    <div class="row row-stats">
+                        <div class="img-block" data-aos="zoom-in-up">
                             <img
                                 class="image"
                                 src="./assets/img/stats-min.jpg"
@@ -550,7 +656,7 @@
                             </div>
                         </div>
 
-                        <div class="info">
+                        <div class="info" data-aos="zoom-in-left">
                             <h2 class="sub-title">
                                 You’ve found a neighborhood you love.
                             </h2>
@@ -562,7 +668,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="row row-qty">
+                    <div class="row row-qty" data-aos="zoom-out">
                         <div class="qty-item">
                             <strong class="qty">2,500</strong>
                             <div class="qty-desc">Homes For Sale</div>
@@ -584,7 +690,12 @@
             <div id="contact" class="subscription">
                 <div class="content">
                     <div class="body">
-                        <div class="info">
+                        <div
+                            class="info"
+                            data-aos="fade-down"
+                            data-aos-easing="linear"
+                            data-aos-duration="1500"
+                        >
                             <h2 class="sub-title line-clamp">
                                 Subscribe to our Newsletter!
                             </h2>
@@ -597,6 +708,7 @@
                             src="./assets/img/newsletter.svg"
                             alt="Subscribe to our Newsletter!"
                             class="image"
+                            data-aos="zoom-in-left"
                         />
                     </div>
                 </div>
@@ -606,7 +718,7 @@
         <!-- ======== Footer ======== -->
         <footer class="footer">
             <div class="content">
-                <div class="row row-top">
+                <div class="row row-top" data-aos="fade-down">
                     <!-- Product column -->
                     <div class="column">
                         <h3 class="heading">Product</h3>
@@ -694,5 +806,15 @@
                 </div>
             </div>
         </footer>
+
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                offset: 180, // offset (in px) from the original trigger point
+                delay: 300, // values from 0 to 3000, with step 50ms
+                duration: 600, // values from 0 to 3000, with step 50ms
+                easing: "ease", // default easing for AOS animations
+            });
+        </script>
     </body>
 </html>
